@@ -115,6 +115,7 @@ export interface TableProps<RecordType = any>
   sortDirections?: SortOrder[];
   showSorterTooltip?: boolean | SorterTooltipProps;
   virtual?: boolean;
+  align?: 'left' | 'right' | 'center';
 }
 
 const InternalTable = <RecordType extends AnyObject = AnyObject>(
@@ -150,6 +151,7 @@ const InternalTable = <RecordType extends AnyObject = AnyObject>(
     locale,
     showSorterTooltip = { target: 'full-header' },
     virtual,
+    align,
   } = props;
 
   const warning = devUseWarning('Table');
@@ -175,6 +177,9 @@ const InternalTable = <RecordType extends AnyObject = AnyObject>(
 
   const mergedColumns = React.useMemo(() => {
     const matched = new Set(Object.keys(screens).filter((m) => screens[m as Breakpoint]));
+    baseColumns?.forEach((record) => {
+      record.align = record?.align || align;
+    });
 
     return baseColumns.filter(
       (c) => !c.responsive || c.responsive.some((r: Breakpoint) => matched.has(r)),

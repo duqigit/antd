@@ -8,6 +8,9 @@ interface DataType {
   age: number;
   address: string;
   tags: string[];
+  test1: string;
+  test2: string;
+  test3: string;
 }
 
 const columns: TableProps<DataType>['columns'] = [
@@ -31,6 +34,7 @@ const columns: TableProps<DataType>['columns'] = [
     title: 'Tags',
     key: 'tags',
     dataIndex: 'tags',
+    align: 'left',
     render: (_, { tags }) => (
       <>
         {tags.map((tag) => {
@@ -49,6 +53,7 @@ const columns: TableProps<DataType>['columns'] = [
   },
   {
     title: 'Action',
+    align: 'left',
     key: 'action',
     render: (_, record) => (
       <Space size="middle">
@@ -56,6 +61,24 @@ const columns: TableProps<DataType>['columns'] = [
         <a>Delete</a>
       </Space>
     ),
+  },
+  {
+    title: 'test1',
+    dataIndex: 'test1',
+    key: 'test1',
+  },
+  {
+    title: 'test2',
+    dataIndex: 'test2',
+    key: 'test2',
+  },
+  {
+    title: 'test3',
+    dataIndex: 'test3',
+    key: 'test3',
+    fixed: 'right',
+    width: 120,
+    render: () => <a>操作</a>,
   },
 ];
 
@@ -66,6 +89,9 @@ const data: DataType[] = [
     age: 32,
     address: 'New York No. 1 Lake Park',
     tags: ['nice', 'developer'],
+    test1: 'test1',
+    test2: 'test2',
+    test3: 'test3',
   },
   {
     key: '2',
@@ -73,6 +99,9 @@ const data: DataType[] = [
     age: 42,
     address: 'London No. 1 Lake Park',
     tags: ['loser'],
+    test1: 'test1',
+    test2: 'test2',
+    test3: 'test3',
   },
   {
     key: '3',
@@ -80,9 +109,14 @@ const data: DataType[] = [
     age: 32,
     address: 'Sydney No. 1 Lake Park',
     tags: ['cool', 'teacher'],
+    test1: 'test1',
+    test2: 'test2',
+    test3: 'test3',
   },
 ];
 
-const App: React.FC = () => <Table columns={columns} dataSource={data} />;
+const App: React.FC = () => (
+  <Table align="center" scroll={{ x: 1500 }} columns={columns} dataSource={data} />
+);
 
 export default App;
