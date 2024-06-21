@@ -40,9 +40,10 @@ return (
 <!-- prettier-ignore -->
 <code src="./demo/basic.tsx">Basic Usage</code>
 <code src="./demo/search.tsx">Select with search field</code>
+<code src="./demo/search-filter-option.tsx">Custom Search</code>
 <code src="./demo/multiple.tsx">multiple selection</code>
 <code src="./demo/size.tsx">Sizes</code>
-<code src="./demo/option-render.tsx">Custom selection render</code>
+<code src="./demo/option-render.tsx">Custom dropdown options</code>
 <code src="./demo/search-sort.tsx">Search with sort</code>
 <code src="./demo/tags.tsx">Tags</code>
 <code src="./demo/optgroup.tsx">Option Group</code>
@@ -57,7 +58,7 @@ return (
 <code src="./demo/variant.tsx" version="5.13.0">Variants</code>
 <code src="./demo/filled-debug.tsx" debug>Filled debug</code>
 <code src="./demo/custom-tag-render.tsx">Custom Tag Render</code>
-<code src="./demo/custom-label-render.tsx">Custom selectd Label render</code>
+<code src="./demo/custom-label-render.tsx">Custom Selected Label Render</code>
 <code src="./demo/responsive.tsx">Responsive maxTagCount</code>
 <code src="./demo/big-data.tsx">Big Data</code>
 <code src="./demo/status.tsx">Status</code>
