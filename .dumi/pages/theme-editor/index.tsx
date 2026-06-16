@@ -15,6 +15,10 @@ const classNames = createStaticStyles(({ css }) => ({
     img {
       display: inline;
     }
+
+    .app-demo-dashboard-banner.ant-card {
+      background-color: var(--ant-color-primary);
+    }
   `,
 }));
 
